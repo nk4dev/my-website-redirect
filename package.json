@@ -6,10 +6,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:open": "opennextjs-cloudflare build ",
-    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "db:up": "npx prisma migrate dev --name v0.1a && npx prisma generate && npx prisma db push",
+    "build:predeploy": "npx prisma migrate dev --name v0.1a && npx prisma generate && npx prisma db push && next build",
+    "build:open": "npx prisma migrate dev --name v0.1a && npx prisma generate && npx prisma db push && opennextjs-cloudflare build ",
+    "preview": "npm run db:up && opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "npm run db:up && opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "npm run db:up && opennextjs-cloudflare build && opennextjs-cloudflare upload",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
