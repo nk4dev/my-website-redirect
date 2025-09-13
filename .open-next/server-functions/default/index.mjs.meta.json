@@ -16,24 +16,8 @@
       ],
       "format": "esm"
     },
-    "node_modules/@opennextjs/aws/dist/adapters/config/util.js": {
-      "bytes": 4361,
-      "imports": [
-        {
-          "path": "node:fs",
-          "kind": "import-statement",
-          "external": true
-        },
-        {
-          "path": "node:path",
-          "kind": "import-statement",
-          "external": true
-        }
-      ],
-      "format": "esm"
-    },
     "node_modules/@opennextjs/aws/dist/adapters/config/index.js": {
-      "bytes": 1502,
+      "bytes": 9066,
       "imports": [
         {
           "path": "node:path",
@@ -44,11 +28,6 @@
           "path": "node_modules/@opennextjs/aws/dist/adapters/logger.js",
           "kind": "import-statement",
           "original": "../logger"
-        },
-        {
-          "path": "node_modules/@opennextjs/aws/dist/adapters/config/util.js",
-          "kind": "import-statement",
-          "original": "./util.js"
         }
       ],
       "format": "esm"
@@ -122,13 +101,24 @@
       ],
       "format": "esm"
     },
+    "node-built-in-modules:node:module": {
+      "bytes": 27,
+      "imports": [
+        {
+          "path": "node:module",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    },
     "node_modules/@opennextjs/aws/dist/core/patchAsyncStorage.js": {
       "bytes": 879,
       "imports": [
         {
-          "path": "node:module",
+          "path": "node-built-in-modules:node:module",
           "kind": "require-call",
-          "external": true
+          "original": "node:module"
         },
         {
           "path": "<runtime>",
@@ -392,6 +382,11 @@
       ],
       "format": "esm"
     },
+    "node_modules/@opennextjs/aws/dist/core/edgeFunctionHandler.js": {
+      "bytes": 980,
+      "imports": [],
+      "format": "esm"
+    },
     "node_modules/@opennextjs/aws/dist/core/routing/middleware.js": {
       "bytes": 6794,
       "imports": [
@@ -421,9 +416,9 @@
           "original": "./util.js"
         },
         {
-          "path": "./middleware.mjs",
+          "path": "node_modules/@opennextjs/aws/dist/core/edgeFunctionHandler.js",
           "kind": "dynamic-import",
-          "external": true
+          "original": "./middleware.mjs"
         }
       ],
       "format": "esm"
@@ -483,9 +478,9 @@
           "original": "../adapters/logger.js"
         },
         {
-          "path": "node:module",
+          "path": "node-built-in-modules:node:module",
           "kind": "require-call",
-          "external": true
+          "original": "node:module"
         },
         {
           "path": "<runtime>",
@@ -41908,6 +41903,11 @@
     ".open-next/server-functions/default/index.mjs": {
       "imports": [
         {
+          "path": "node:module",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
           "path": "node:stream",
           "kind": "import-statement",
           "external": true
@@ -41919,16 +41919,6 @@
         },
         {
           "path": "node:stream",
-          "kind": "import-statement",
-          "external": true
-        },
-        {
-          "path": "node:path",
-          "kind": "import-statement",
-          "external": true
-        },
-        {
-          "path": "node:fs",
           "kind": "import-statement",
           "external": true
         },
@@ -41953,11 +41943,6 @@
           "external": true
         },
         {
-          "path": "node:module",
-          "kind": "require-call",
-          "external": true
-        },
-        {
           "path": "node:crypto",
           "kind": "import-statement",
           "external": true
@@ -41970,11 +41955,6 @@
         {
           "path": "next/dist/server/next-server.js",
           "kind": "import-statement",
-          "external": true
-        },
-        {
-          "path": "node:module",
-          "kind": "require-call",
           "external": true
         },
         {
@@ -41996,6 +41976,9 @@
         },
         "node_modules/@opennextjs/aws/dist/http/util.js": {
           "bytesInOutput": 1191
+        },
+        "node-built-in-modules:node:module": {
+          "bytesInOutput": 215
         },
         "node_modules/@opennextjs/aws/dist/utils/stream.js": {
           "bytesInOutput": 352
@@ -42031,10 +42014,7 @@
           "bytesInOutput": 344
         },
         "node_modules/@opennextjs/aws/dist/adapters/config/index.js": {
-          "bytesInOutput": 724
-        },
-        "node_modules/@opennextjs/aws/dist/adapters/config/util.js": {
-          "bytesInOutput": 2520
+          "bytesInOutput": 9083
         },
         "node_modules/@opennextjs/aws/dist/core/createMainHandler.js": {
           "bytesInOutput": 1238
@@ -42058,7 +42038,7 @@
           "bytesInOutput": 2373
         },
         "node_modules/@opennextjs/aws/dist/core/patchAsyncStorage.js": {
-          "bytesInOutput": 80
+          "bytesInOutput": 111
         },
         "node_modules/@opennextjs/aws/dist/core/routing/util.js": {
           "bytesInOutput": 6503
@@ -42097,7 +42077,7 @@
           "bytesInOutput": 2910
         },
         "node_modules/@opennextjs/aws/dist/core/require-hooks.js": {
-          "bytesInOutput": 98
+          "bytesInOutput": 129
         },
         "node_modules/@opennextjs/aws/dist/core/resolve.js": {
           "bytesInOutput": 1833
@@ -42106,7 +42086,7 @@
           "bytesInOutput": 285
         }
       },
-      "bytes": 127031
+      "bytes": 135651
     }
   }
 }

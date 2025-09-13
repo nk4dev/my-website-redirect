@@ -325,7 +325,7 @@
       "format": "esm"
     },
     "node_modules/@opennextjs/aws/dist/adapters/config/index.js": {
-      "bytes": 8717,
+      "bytes": 9066,
       "imports": [
         {
           "path": "node:path",
@@ -829,7 +829,7 @@
           "bytesInOutput": 3635
         },
         "node_modules/@opennextjs/aws/dist/adapters/config/index.js": {
-          "bytesInOutput": 9006
+          "bytesInOutput": 9369
         },
         "node_modules/@opennextjs/aws/dist/http/openNextResponse.js": {
           "bytesInOutput": 69
@@ -871,7 +871,7 @@
           "bytesInOutput": 4122
         }
       },
-      "bytes": 173411
+      "bytes": 173918
     }
   }
 }

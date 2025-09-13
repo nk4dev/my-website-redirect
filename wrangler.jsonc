@@ -29,4 +29,7 @@
     //   "bucket_name": "<BUCKET_NAME>",
     // },
   ],
+  "alias": {
+    "whatwg-url": "whatwg-url"
+  }
 }
