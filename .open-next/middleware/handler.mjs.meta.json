@@ -1,0 +1,877 @@
+{
+  "inputs": {
+    "node_modules/@opennextjs/aws/dist/utils/error.js": {
+      "bytes": 1037,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/adapters/logger.js": {
+      "bytes": 2449,
+      "imports": [
+        {
+          "path": "node_modules/@opennextjs/aws/dist/utils/error.js",
+          "kind": "import-statement",
+          "original": "../utils/error.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/utils/promise.js": {
+      "bytes": 3906,
+      "imports": [
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/logger.js",
+          "kind": "import-statement",
+          "original": "../adapters/logger"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/cookie/dist/index.js": {
+      "bytes": 8340,
+      "imports": [],
+      "format": "cjs"
+    },
+    "node_modules/@opennextjs/aws/dist/http/util.js": {
+      "bytes": 1728,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/overrides/converters/utils.js": {
+      "bytes": 730,
+      "imports": [
+        {
+          "path": "node_modules/@opennextjs/aws/dist/http/util.js",
+          "kind": "import-statement",
+          "original": "../../http/util.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/overrides/converters/edge.js": {
+      "bytes": 3648,
+      "imports": [
+        {
+          "path": "node:buffer",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node_modules/cookie/dist/index.js",
+          "kind": "import-statement",
+          "original": "cookie"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/http/util.js",
+          "kind": "import-statement",
+          "original": "../../http/util"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/overrides/converters/utils.js",
+          "kind": "import-statement",
+          "original": "./utils.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/overrides/wrappers/cloudflare-edge.js": {
+      "bytes": 1833,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/adapters/util.js": {
+      "bytes": 1208,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/overrides/tagCache/constants.js": {
+      "bytes": 969,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/overrides/tagCache/dynamodb.js": {
+      "bytes": 5376,
+      "imports": [
+        {
+          "path": "node:path",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "@aws-sdk/client-dynamodb",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/logger.js",
+          "kind": "import-statement",
+          "original": "../../adapters/logger"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/util.js",
+          "kind": "import-statement",
+          "original": "../../adapters/util"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/overrides/tagCache/constants.js",
+          "kind": "import-statement",
+          "original": "./constants"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/overrides/queue/sqs.js": {
+      "bytes": 704,
+      "imports": [
+        {
+          "path": "@aws-sdk/client-sqs",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/logger.js",
+          "kind": "import-statement",
+          "original": "../../adapters/logger"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/overrides/incrementalCache/s3.js": {
+      "bytes": 1749,
+      "imports": [
+        {
+          "path": "node:path",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "@aws-sdk/client-s3",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/logger.js",
+          "kind": "import-statement",
+          "original": "../../adapters/logger"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/util.js",
+          "kind": "import-statement",
+          "original": "../../adapters/util"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/overrides/imageLoader/s3.js": {
+      "bytes": 1117,
+      "imports": [
+        {
+          "path": "@aws-sdk/client-s3",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/utils/error.js",
+          "kind": "import-statement",
+          "original": "../../utils/error"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/logger.js",
+          "kind": "import-statement",
+          "original": "../../adapters/logger"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/overrides/originResolver/pattern-env.js": {
+      "bytes": 1498,
+      "imports": [
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/logger.js",
+          "kind": "import-statement",
+          "original": "../../adapters/logger"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/overrides/assetResolver/dummy.js": {
+      "bytes": 152,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/overrides/warmer/aws-lambda.js": {
+      "bytes": 2322,
+      "imports": [
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/logger.js",
+          "kind": "import-statement",
+          "original": "../../adapters/logger"
+        },
+        {
+          "path": "@aws-sdk/client-lambda",
+          "kind": "dynamic-import",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/utils/stream.js": {
+      "bytes": 1004,
+      "imports": [
+        {
+          "path": "node:stream",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/overrides/proxyExternalRequest/fetch.js": {
+      "bytes": 889,
+      "imports": [
+        {
+          "path": "node_modules/@opennextjs/aws/dist/utils/stream.js",
+          "kind": "import-statement",
+          "original": "../../utils/stream"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/overrides/cdnInvalidation/dummy.js": {
+      "bytes": 110,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/core/resolve.js": {
+      "bytes": 3026,
+      "imports": [
+        {
+          "path": "node_modules/@opennextjs/aws/dist/overrides/converters/edge.js",
+          "kind": "dynamic-import",
+          "original": "../overrides/converters/edge.js"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/overrides/wrappers/cloudflare-edge.js",
+          "kind": "dynamic-import",
+          "original": "../overrides/wrappers/cloudflare-edge.js"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/overrides/tagCache/dynamodb.js",
+          "kind": "dynamic-import",
+          "original": "../overrides/tagCache/dynamodb.js"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/overrides/queue/sqs.js",
+          "kind": "dynamic-import",
+          "original": "../overrides/queue/sqs.js"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/overrides/incrementalCache/s3.js",
+          "kind": "dynamic-import",
+          "original": "../overrides/incrementalCache/s3.js"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/overrides/imageLoader/s3.js",
+          "kind": "dynamic-import",
+          "original": "../overrides/imageLoader/s3.js"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/overrides/originResolver/pattern-env.js",
+          "kind": "dynamic-import",
+          "original": "../overrides/originResolver/pattern-env.js"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/overrides/assetResolver/dummy.js",
+          "kind": "dynamic-import",
+          "original": "../overrides/assetResolver/dummy.js"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/overrides/warmer/aws-lambda.js",
+          "kind": "dynamic-import",
+          "original": "../overrides/warmer/aws-lambda.js"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/overrides/proxyExternalRequest/fetch.js",
+          "kind": "dynamic-import",
+          "original": "../overrides/proxyExternalRequest/fetch.js"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/overrides/cdnInvalidation/dummy.js",
+          "kind": "dynamic-import",
+          "original": "../overrides/cdnInvalidation/dummy.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/core/createGenericHandler.js": {
+      "bytes": 835,
+      "imports": [
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/logger.js",
+          "kind": "import-statement",
+          "original": "../adapters/logger"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/core/resolve.js",
+          "kind": "import-statement",
+          "original": "./resolve"
+        },
+        {
+          "path": "./open-next.config.mjs",
+          "kind": "dynamic-import",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/adapters/config/index.js": {
+      "bytes": 8717,
+      "imports": [
+        {
+          "path": "node:path",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/logger.js",
+          "kind": "import-statement",
+          "original": "../logger"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/http/openNextResponse.js": {
+      "bytes": 12150,
+      "imports": [
+        {
+          "path": "node:stream",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/logger.js",
+          "kind": "import-statement",
+          "original": "../adapters/logger"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/http/util.js",
+          "kind": "import-statement",
+          "original": "./util"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/utils/binary.js": {
+      "bytes": 1727,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/core/routing/i18n/accept-header.js": {
+      "bytes": 3428,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/core/routing/i18n/index.js": {
+      "bytes": 5218,
+      "imports": [
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/config/index.js",
+          "kind": "import-statement",
+          "original": "../../../adapters/config/index.js"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/utils/stream.js",
+          "kind": "import-statement",
+          "original": "../../../utils/stream.js"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/logger.js",
+          "kind": "import-statement",
+          "original": "../../../adapters/logger.js"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/core/routing/util.js",
+          "kind": "import-statement",
+          "original": "../util.js"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/core/routing/i18n/accept-header.js",
+          "kind": "import-statement",
+          "original": "./accept-header"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/core/routing/queue.js": {
+      "bytes": 2202,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/core/routing/util.js": {
+      "bytes": 15161,
+      "imports": [
+        {
+          "path": "node:crypto",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:querystring",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:stream",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/config/index.js",
+          "kind": "import-statement",
+          "original": "../../adapters/config/index.js"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/http/openNextResponse.js",
+          "kind": "import-statement",
+          "original": "../../http/openNextResponse.js"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/http/util.js",
+          "kind": "import-statement",
+          "original": "../../http/util.js"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/logger.js",
+          "kind": "import-statement",
+          "original": "../../adapters/logger.js"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/utils/binary.js",
+          "kind": "import-statement",
+          "original": "../../utils/binary.js"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/core/routing/i18n/index.js",
+          "kind": "import-statement",
+          "original": "./i18n/index.js"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/core/routing/queue.js",
+          "kind": "import-statement",
+          "original": "./queue.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/utils/cache.js": {
+      "bytes": 2149,
+      "imports": [
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/logger.js",
+          "kind": "import-statement",
+          "original": "../adapters/logger"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/core/routing/cacheInterceptor.js": {
+      "bytes": 10192,
+      "imports": [
+        {
+          "path": "node:crypto",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/config/index.js",
+          "kind": "import-statement",
+          "original": "../../adapters/config/index"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/utils/stream.js",
+          "kind": "import-statement",
+          "original": "../../utils/stream"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/utils/binary.js",
+          "kind": "import-statement",
+          "original": "../../utils/binary"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/utils/cache.js",
+          "kind": "import-statement",
+          "original": "../../utils/cache"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/logger.js",
+          "kind": "import-statement",
+          "original": "../../adapters/logger"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/core/routing/i18n/index.js",
+          "kind": "import-statement",
+          "original": "./i18n"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/core/routing/queue.js",
+          "kind": "import-statement",
+          "original": "./queue"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/path-to-regexp/dist.es2015/index.js": {
+      "bytes": 15454,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/utils/normalize-path.js": {
+      "bytes": 680,
+      "imports": [
+        {
+          "path": "node:path",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/core/routing/routeMatcher.js": {
+      "bytes": 3198,
+      "imports": [
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/config/index.js",
+          "kind": "import-statement",
+          "original": "../../adapters/config/index"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/core/routing/matcher.js": {
+      "bytes": 14383,
+      "imports": [
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/config/index.js",
+          "kind": "import-statement",
+          "original": "../../adapters/config/index"
+        },
+        {
+          "path": "node_modules/path-to-regexp/dist.es2015/index.js",
+          "kind": "import-statement",
+          "original": "path-to-regexp"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/utils/normalize-path.js",
+          "kind": "import-statement",
+          "original": "../../utils/normalize-path"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/utils/stream.js",
+          "kind": "import-statement",
+          "original": "../../utils/stream"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/logger.js",
+          "kind": "import-statement",
+          "original": "../../adapters/logger"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/core/routing/i18n/index.js",
+          "kind": "import-statement",
+          "original": "./i18n"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/core/routing/routeMatcher.js",
+          "kind": "import-statement",
+          "original": "./routeMatcher"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/core/routing/util.js",
+          "kind": "import-statement",
+          "original": "./util"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/core/edgeFunctionHandler.js": {
+      "bytes": 980,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/core/routing/middleware.js": {
+      "bytes": 6794,
+      "imports": [
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/config/index.js",
+          "kind": "import-statement",
+          "original": "../../adapters/config/index.js"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/utils/stream.js",
+          "kind": "import-statement",
+          "original": "../../utils/stream.js"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/overrides/converters/utils.js",
+          "kind": "import-statement",
+          "original": "../../overrides/converters/utils.js"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/core/routing/i18n/index.js",
+          "kind": "import-statement",
+          "original": "./i18n/index.js"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/core/routing/util.js",
+          "kind": "import-statement",
+          "original": "./util.js"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/core/edgeFunctionHandler.js",
+          "kind": "dynamic-import",
+          "original": "./middleware.mjs"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/core/routingHandler.js": {
+      "bytes": 10019,
+      "imports": [
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/config/index.js",
+          "kind": "import-statement",
+          "original": "../adapters/config/index"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/logger.js",
+          "kind": "import-statement",
+          "original": "../adapters/logger"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/core/routing/cacheInterceptor.js",
+          "kind": "import-statement",
+          "original": "./routing/cacheInterceptor"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/core/routing/i18n/index.js",
+          "kind": "import-statement",
+          "original": "./routing/i18n"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/core/routing/matcher.js",
+          "kind": "import-statement",
+          "original": "./routing/matcher"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/core/routing/middleware.js",
+          "kind": "import-statement",
+          "original": "./routing/middleware"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/core/routing/routeMatcher.js",
+          "kind": "import-statement",
+          "original": "./routing/routeMatcher"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/core/routing/util.js",
+          "kind": "import-statement",
+          "original": "./routing/util"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@opennextjs/aws/dist/adapters/middleware.js": {
+      "bytes": 4156,
+      "imports": [
+        {
+          "path": "node_modules/@opennextjs/aws/dist/utils/promise.js",
+          "kind": "import-statement",
+          "original": "../utils/promise"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/adapters/logger.js",
+          "kind": "import-statement",
+          "original": "../adapters/logger"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/core/createGenericHandler.js",
+          "kind": "import-statement",
+          "original": "../core/createGenericHandler"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/core/resolve.js",
+          "kind": "import-statement",
+          "original": "../core/resolve"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/core/routing/util.js",
+          "kind": "import-statement",
+          "original": "../core/routing/util"
+        },
+        {
+          "path": "node_modules/@opennextjs/aws/dist/core/routingHandler.js",
+          "kind": "import-statement",
+          "original": "../core/routingHandler"
+        }
+      ],
+      "format": "esm"
+    }
+  },
+  "outputs": {
+    ".open-next/middleware/handler.mjs": {
+      "imports": [
+        {
+          "path": "node:buffer",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:stream",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "./open-next.config.mjs",
+          "kind": "dynamic-import",
+          "external": true
+        },
+        {
+          "path": "node:crypto",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:querystring",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:stream",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:stream",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:crypto",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "exports": [
+        "default",
+        "handler"
+      ],
+      "entryPoint": "node_modules/@opennextjs/aws/dist/adapters/middleware.js",
+      "inputs": {
+        "node_modules/@opennextjs/aws/dist/utils/error.js": {
+          "bytesInOutput": 202
+        },
+        "node_modules/@opennextjs/aws/dist/adapters/logger.js": {
+          "bytesInOutput": 1698
+        },
+        "node_modules/cookie/dist/index.js": {
+          "bytesInOutput": 5203
+        },
+        "node_modules/@opennextjs/aws/dist/http/util.js": {
+          "bytesInOutput": 613
+        },
+        "node_modules/@opennextjs/aws/dist/overrides/converters/utils.js": {
+          "bytesInOutput": 229
+        },
+        "node_modules/@opennextjs/aws/dist/overrides/converters/edge.js": {
+          "bytesInOutput": 3309
+        },
+        "node_modules/@opennextjs/aws/dist/overrides/wrappers/cloudflare-edge.js": {
+          "bytesInOutput": 1761
+        },
+        "node_modules/@opennextjs/aws/dist/overrides/originResolver/pattern-env.js": {
+          "bytesInOutput": 1517
+        },
+        "node_modules/@opennextjs/aws/dist/overrides/assetResolver/dummy.js": {
+          "bytesInOutput": 296
+        },
+        "node_modules/@opennextjs/aws/dist/utils/stream.js": {
+          "bytesInOutput": 489
+        },
+        "node_modules/@opennextjs/aws/dist/overrides/proxyExternalRequest/fetch.js": {
+          "bytesInOutput": 1075
+        },
+        "node_modules/@opennextjs/aws/dist/core/edgeFunctionHandler.js": {
+          "bytesInOutput": 1052
+        },
+        "node_modules/@opennextjs/aws/dist/utils/promise.js": {
+          "bytesInOutput": 2373
+        },
+        "node_modules/@opennextjs/aws/dist/adapters/middleware.js": {
+          "bytesInOutput": 2843
+        },
+        "node_modules/@opennextjs/aws/dist/core/createGenericHandler.js": {
+          "bytesInOutput": 544
+        },
+        "node_modules/@opennextjs/aws/dist/core/resolve.js": {
+          "bytesInOutput": 1168
+        },
+        "node_modules/@opennextjs/aws/dist/core/routing/util.js": {
+          "bytesInOutput": 3635
+        },
+        "node_modules/@opennextjs/aws/dist/adapters/config/index.js": {
+          "bytesInOutput": 9006
+        },
+        "node_modules/@opennextjs/aws/dist/http/openNextResponse.js": {
+          "bytesInOutput": 69
+        },
+        "node_modules/@opennextjs/aws/dist/utils/binary.js": {
+          "bytesInOutput": 1607
+        },
+        "node_modules/@opennextjs/aws/dist/core/routing/i18n/index.js": {
+          "bytesInOutput": 3372
+        },
+        "node_modules/@opennextjs/aws/dist/core/routing/i18n/accept-header.js": {
+          "bytesInOutput": 2721
+        },
+        "node_modules/@opennextjs/aws/dist/core/routing/queue.js": {
+          "bytesInOutput": 1178
+        },
+        "node_modules/@opennextjs/aws/dist/core/routingHandler.js": {
+          "bytesInOutput": 6716
+        },
+        "node_modules/@opennextjs/aws/dist/core/routing/cacheInterceptor.js": {
+          "bytesInOutput": 6900
+        },
+        "node_modules/@opennextjs/aws/dist/utils/cache.js": {
+          "bytesInOutput": 810
+        },
+        "node_modules/path-to-regexp/dist.es2015/index.js": {
+          "bytesInOutput": 12321
+        },
+        "node_modules/@opennextjs/aws/dist/utils/normalize-path.js": {
+          "bytesInOutput": 219
+        },
+        "node_modules/@opennextjs/aws/dist/core/routing/matcher.js": {
+          "bytesInOutput": 11082
+        },
+        "node_modules/@opennextjs/aws/dist/core/routing/routeMatcher.js": {
+          "bytesInOutput": 2060
+        },
+        "node_modules/@opennextjs/aws/dist/core/routing/middleware.js": {
+          "bytesInOutput": 4122
+        }
+      },
+      "bytes": 173411
+    }
+  }
+}
