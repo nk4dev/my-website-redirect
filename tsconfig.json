@@ -23,6 +23,10 @@
     "**/*.ts",
     "**/*.tsx"
   ],
+  "paths": {
+    "@/*": ["./src/*"],
+    "@generated/*": ["./generated/*"]
+  },
   "exclude": [
     "node_modules"
   ]
