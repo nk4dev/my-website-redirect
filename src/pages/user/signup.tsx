@@ -21,7 +21,7 @@ export default function Signup() {
 			router.push("/user/signin");
 		} else {
 			const data = await res.json();
-			setError((data as { error?: string }).error || "Signup failed");
+			setError((data as { error?: string }).error  || "Signup failed");
 		}
 	};
 
