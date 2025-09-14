@@ -3,6 +3,9 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaClient } from "../../../../generated/prisma";
 import { compare } from "bcryptjs";
 
+// Remove edge runtime for now to avoid compatibility issues
+// export const runtime = 'edge';
+
 const prisma = new PrismaClient();
 
 export const authOptions = {
@@ -14,10 +17,15 @@ export const authOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
+        if (!credentials?.email || !credentials?.password) {
+          return null;
+        }
+        
         const user = await prisma.user.findUnique({
-          where: { email: credentials.email },
+          where: { email: credentials.email as string },
         });
-        if (user && await compare(credentials.password, user.password)) {
+        
+        if (user && await compare(credentials.password as string, user.password)) {
           return { id: user.id, email: user.email };
         }
         return null;
@@ -32,6 +40,23 @@ export const authOptions = {
     signIn: "/user/signin",
     signUp: "/user/signup",
   },
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      if (token) {
+        session.user.id = token.id as string;
+      }
+      return session;
+    },
+  },
+  events: {},
+  debug: process.env.NODE_ENV === "development",
 };
 
-export default NextAuth(authOptions);
+const handler = NextAuth(authOptions);
+export default handler;

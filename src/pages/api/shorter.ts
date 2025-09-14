@@ -1,8 +1,9 @@
 import { PrismaClient } from "../../../generated/prisma";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 const prisma = new PrismaClient();
 
-export default async function handler(req, res) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'POST') {
         const { original } = req.body;
         if (!original) {
@@ -16,11 +17,13 @@ export default async function handler(req, res) {
         // Generate short code and URL
         // 0-9, a-z, A-Z, total 62 characters
         // Simple random generation, not collision-proof
-        const crypto = require('crypto')
         const N = 3;
         const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        const shortCode = crypto.randomBytes(N).toString('base64').substring(0, N)
-        const shortUrl = `http://localhost:3000/${shortCode}`;
+        let shortCode = '';
+        for (let i = 0; i < N; i++) {
+            shortCode += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        const shortUrl = `http://localhost:3000/api/redirect?id=${shortCode}`;
         try {
             const created = await prisma.urls.create({
                 data: {
@@ -33,11 +36,10 @@ export default async function handler(req, res) {
         } catch (err) {
             res.status(500).json({ error: "Failed to save URL" });
         }
+    } else if (req.method === 'OPTIONS') {
+        res.status(200).end();
+        return;
     } else {
         res.status(405).json({ error: 'Method not allowed' });
     }
-        if (req.method === 'OPTIONS') {
-            res.status(200).end();
-            return;
-        }
 }

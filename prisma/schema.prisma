@@ -7,7 +7,11 @@
 generator client {
   provider = "prisma-client-js"
   output   = "../generated/prisma"
-  previewFeatures = ["driverAdapters"]
+}
+
+generator edge {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma-edge"
 }
 
 datasource db {

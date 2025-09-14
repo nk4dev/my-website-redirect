@@ -1,5 +1,5 @@
-const nextConfig= {
-    outputFileTracingIncludes: {
+const nextConfig = {
+  outputFileTracingIncludes: {
     "*": [
       "node_modules/@emotion/react/**/*",
       "node_modules/@emotion/styled/**/*", 
@@ -20,7 +20,27 @@ const nextConfig= {
     "@panva/hkdf",
     "jose", 
     "openid-client"
-  ]
+  ],
+  experimental: {
+    esmExternals: true,
+    serverComponentsExternalPackages: ["@prisma/client"],
+  },
+  // Disable problematic webpack optimizations for Cloudflare
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      config.externals = [...(config.externals || []), '_http_common'];
+    }
+    
+    // Fix for "Cannot read properties of undefined (reading 'custom')"
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false,
+      net: false,
+      tls: false,
+    };
+    
+    return config;
+  },
 };
  
 export default nextConfig;

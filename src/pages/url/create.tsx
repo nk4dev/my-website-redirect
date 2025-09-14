@@ -88,7 +88,7 @@ export default function CreateShortUrl(){
                 </form>
                 {shortUrl && (
                     <div style={{ marginTop: 16, padding: 12, borderRadius: 4 }}>
-                        <strong>Short URL:</strong> 
+                        <strong>Short URL endpoint:</strong> 
                         <div style={{ marginTop: 8 }}>
                             <a href={shortUrl} target="_blank" rel="noopener noreferrer" style={{ color: "#2196F3" }}>
                                 {shortUrl}
