@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+        // GitHub Pages 404 redirect hack
+        // This script takes the current page URL and redirects to the root domain
+        // with the path as a query parameter, which can then be processed by the main app
+        var pathSegmentsToKeep = 0;
+        var l = window.location;
+        
+        // Get the path without leading slash
+        var path = l.pathname.substring(1);
+        
+        if (path) {
+            // Redirect to root with the path ID
+            l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + 
+                     '/?id=' + path);
+        } else {
+            // If no path, just go to root
+            l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/');
+        }
+    </script>
+</head>
+<body>
+    <div>Redirecting...</div>
+</body>
+</html>

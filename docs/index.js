@@ -4,6 +4,16 @@ function getQueryParam(name) {
     return urlParams.get(name);
 }
 
+// Get ID from URL path (e.g., /ABC.html -> ABC, or /ABC -> ABC)
+function getIdFromPath() {
+    const path = window.location.pathname;
+    if (path === '/' || path === '/index.html') {
+        return null;
+    }
+    // Remove leading slash and .html extension if present
+    return path.replace(/^\//, '').replace(/\.html$/, '');
+}
+
 // Get all query parameters as an object
 function getAllQueryParams() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -14,11 +24,8 @@ function getAllQueryParams() {
     return params;
 }
 
-// Usage examples:
-// const userId = getQueryParam('id');
-// const allParams = getAllQueryParams();
-
-const linkId = getQueryParam('id');
+// Try to get ID from query parameter first, then from path
+const linkId = getQueryParam('id') || getIdFromPath();
 if (linkId) {
     // Redirect to the new URL with the linkId as a query parameter
     fetch(`https://urls.varius.technology/api/redirect?id=${linkId}`)
