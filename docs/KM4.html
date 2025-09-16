@@ -25,12 +25,12 @@
                     window.location.href = data.redirect;
                 } else {
                     console.error('No redirect URL found in response');
-                    window.location.href = 'https://nknighta.me';
+                    window.location.href = 'https://p.nknighta.me/404.html';
                 }
             })
             .catch(error => {
                 console.error('Error fetching redirect API:', error);
-                window.location.href = 'https://nknighta.me';
+                window.location.href = 'https://p.nknighta.me/404.html';
             });
     </script>
 </body>
