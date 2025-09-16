@@ -58,27 +58,17 @@ export const userOperations = {
 // Database operations for Urls
 export const urlOperations = {
   async findUnique(where: { id?: string; original?: string; shorter?: string }): Promise<Url | null> {
-    // If id is present and is a valid UUID, search by id
+    // Since id and shorter are now the same, search by id first
     if (where.id) {
-      // Simple UUID v4 regex
-      const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-      if (uuidRegex.test(where.id)) {
-        const result = await sql`
-          SELECT * FROM "Urls" WHERE id = ${where.id} LIMIT 1
-        `;
-        return result[0] as Url || null;
-      } else {
-        // Always treat as shorter if not UUID
-        const result = await sql`
-          SELECT * FROM "Urls" WHERE shorter = ${where.id} LIMIT 1
-        `;
-        return result[0] as Url || null;
-      }
+      const result = await sql`
+        SELECT * FROM "Urls" WHERE id = ${where.id} LIMIT 1
+      `;
+      return result[0] as Url || null;
     }
 
     if (where.shorter) {
       const result = await sql`
-        SELECT * FROM "Urls" WHERE shorter = ${where.shorter} LIMIT 1
+        SELECT * FROM "Urls" WHERE id = ${where.shorter} LIMIT 1
       `;
       return result[0] as Url || null;
     }
