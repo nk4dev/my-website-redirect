@@ -25,8 +25,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         try {
             const created = await urlOperations.create({
                 id: shortCode,
-                original,
-                shorter: shortUrl,
+                original
             });
             res.status(200).json({ shorter: created.shorter });
         } catch (err) {

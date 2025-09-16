@@ -29,6 +29,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             res.status(404).send('Not Found');
         }
     } catch (error) {
+        console.error('Redirect error:', error, " ID:", id as string);
         res.status(500).send('Internal Server Error');
     }
 }
