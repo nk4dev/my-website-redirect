@@ -1,8 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { PrismaClient } from '../../../generated/prisma';
+import { urlOperations } from '../../lib/db';
 // This API route redirects to a specified URL
-
-const prisma = new PrismaClient();
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     res.setHeader('Access-Control-Allow-Origin', process.env.CORS_ORIGIN || '*');
@@ -21,8 +19,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
     
     try {
-        const record = await prisma.urls.findUnique({
-            where: { id: id as string },
+        const record = await urlOperations.findUnique({
+            id: id as string,
         });
         
         if (record) {
@@ -31,6 +29,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             res.status(404).send('Not Found');
         }
     } catch (error) {
+        console.error('Redirect error:', error, " ID:", id as string);
         res.status(500).send('Internal Server Error');
     }
 }

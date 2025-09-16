@@ -1,8 +1,6 @@
-import { PrismaClient } from "../../../../generated/prisma";
+import { userOperations } from "../../../lib/db";
 import { hash } from "bcryptjs";
 import type { NextApiRequest, NextApiResponse } from "next";
-
-const prisma = new PrismaClient();
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'OPTIONS') {
@@ -17,12 +15,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(400).json({ error: "Email and password required" });
   }
   try {
-    const existing = await prisma.user.findUnique({ where: { email } });
+    const existing = await userOperations.findUnique({ email });
     if (existing) {
       return res.status(409).json({ error: "Email already in use" });
     }
     const hashed = await hash(password, 10);
-    await prisma.user.create({ data: { email, password: hashed } });
+    await userOperations.create({ email, password: hashed });
     return res.status(201).json({ message: "User created" });
   } catch (error) {
     console.error("Signup error:", error);

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Get a specific query parameter
 function getQueryParam(name) {
     const urlParams = new URLSearchParams(window.location.search);
@@ -25,4 +26,14 @@ if (linkId) {
 } else {
     // Redirect to a default page if no linkId is found
     window.location.href = 'https://nknighta.me';
+=======
+// Get ID parameter from URL
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get('id');
+
+if (id) {
+    window.location.href = `/${id}`;
+} else {
+    window.location.href = '/';
+>>>>>>> neon-db
 }

@@ -23,7 +23,6 @@ const nextConfig = {
   ],
   experimental: {
     esmExternals: true,
-    serverComponentsExternalPackages: ["@prisma/client"],
   },
   // Disable problematic webpack optimizations for Cloudflare
   webpack: (config, { isServer }) => {

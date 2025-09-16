@@ -4,7 +4,7 @@ node_modules/
 .next/ 
 
 .env
+.env.local
 .dev.vars
 
 package-lock.json
-/generated/prisma

@@ -35,9 +35,9 @@ export default function CreateShortUrl(){
             });
 
             const data = await response.json() as { shorter?: string; error?: string };
-
+            const HOST_URL = process.env.NEXT_PUBLIC_HOST_URL === undefined ? 'https://urls.varius.technology' : process.env.NEXT_PUBLIC_HOST_URL;
             if (response.ok) {
-                setShortUrl(data.shorter || '');
+                setShortUrl(`${HOST_URL}/api/redirect?id=${data.shorter}` || '');
                 setOriginalUrl(""); // Clear the input after successful creation
             } else {
                 setError(data.error || 'Failed to create short URL');
