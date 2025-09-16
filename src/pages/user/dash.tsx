@@ -1,7 +1,7 @@
 import { Button } from "@chakra-ui/react";
-import { PrismaClient } from "../../../generated/prisma"
 import { useRouter } from "next/router";
 import { deleteUrl } from "../../utils/deleteUrl";
+import { sql } from "../../lib/db";
 import Layout from "../layout/main";
 
 export default function Home({ data }) {
@@ -44,8 +44,7 @@ export default function Home({ data }) {
 }
 
 export async function getServerSideProps() {
-    const prisma = new PrismaClient();
-    const data = await prisma.urls.findMany();
+    const data = await sql`SELECT id, original FROM urls ORDER BY created_at DESC`;
     const dataFiltered = data.map(({ id, original }) => ({ id, target: original }));
     return {
         props: {

@@ -1,7 +1,5 @@
-import { PrismaClient } from "../../../generated/prisma";
+import { urlOperations } from "../../lib/db";
 import type { NextApiRequest, NextApiResponse } from "next";
-
-const prisma = new PrismaClient();
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'POST') {
@@ -10,7 +8,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             return res.status(400).json({ error: "Original URL required" });
         }
         // Check if original URL already exists
-        const existing = await prisma.urls.findUnique({ where: { original } });
+        const existing = await urlOperations.findUnique({ original });
         if (existing) {
             return res.status(200).json({ shorter: existing.shorter });
         }
@@ -25,12 +23,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         }
         const shortUrl = `http://localhost:3000/api/redirect?id=${shortCode}`;
         try {
-            const created = await prisma.urls.create({
-                data: {
-                    id: shortCode,
-                    original,
-                    shorter: shortUrl,
-                },
+            const created = await urlOperations.create({
+                id: shortCode,
+                original,
+                shorter: shortUrl,
             });
             res.status(200).json({ shorter: created.shorter });
         } catch (err) {

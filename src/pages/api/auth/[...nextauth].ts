@@ -1,12 +1,10 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { PrismaClient } from "../../../../generated/prisma";
+import { userOperations } from "../../../lib/db";
 import { compare } from "bcryptjs";
 
 // Remove edge runtime for now to avoid compatibility issues
 // export const runtime = 'edge';
-
-const prisma = new PrismaClient();
 
 export const authOptions = {
   providers: [
@@ -21,8 +19,8 @@ export const authOptions = {
           return null;
         }
         
-        const user = await prisma.user.findUnique({
-          where: { email: credentials.email as string },
+        const user = await userOperations.findUnique({
+          email: credentials.email as string,
         });
         
         if (user && await compare(credentials.password as string, user.password)) {

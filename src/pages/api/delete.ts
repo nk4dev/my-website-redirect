@@ -1,7 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { PrismaClient } from '../../../generated/prisma';
-
-const prisma = new PrismaClient();
+import { urlOperations } from '../../lib/db';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'DELETE') {
@@ -15,9 +13,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    await prisma.urls.delete({
-      where: { id },
-    });
+    await urlOperations.delete({ id });
 
     return res.status(200).json({ success: true, message: 'URL deleted successfully' });
   } catch (error) {
